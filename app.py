@@ -26,12 +26,18 @@ def index():
         result.append(report)
  # except Exception:
         # call this method if any of the database operation above fail
-    return report
+    if result.count() > 0:
+        # Prepare the response
+        return dumps(result)
+    else:
+        # No records are found
+        return "", 404
+
  # finally:
    # print('Process completed')
 
 
-#serve(app, host="0.0.0.0", port='5000')
+# serve(app, host="0.0.0.0", port='5000')
 
 # if __name__ == '__main__':
 #   HOST = environ.get('SERVER_HOST', '0.0.0.0')
