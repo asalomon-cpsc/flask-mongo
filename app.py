@@ -1,10 +1,8 @@
 from os import environ
 from datetime import datetime
 from pymongo import MongoClient
-from flask import Flask, jsonify
-from flask import render_template
+from flask import Flask, jsonify, render_template
 from flask_cors import CORS
-from waitress import serve
 import os
 import logging
 import json
