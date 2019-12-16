@@ -25,7 +25,7 @@ def index():
         result.append(report)
  # except Exception:
         # call this method if any of the database operation above fail
-    return jsonify(report)
+    return report
  # finally:
    # print('Process completed')
 
