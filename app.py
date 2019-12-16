@@ -28,7 +28,7 @@ def index():
         # call this method if any of the database operation above fail
     if result.count() > 0:
         # Prepare the response
-        return dumps(result)
+        return json.dumps(result)
     else:
         # No records are found
         return "", 404
