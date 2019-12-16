@@ -26,12 +26,9 @@ def index():
         result.append(report)
  # except Exception:
         # call this method if any of the database operation above fail
-    if result.count() > 0:
+
         # Prepare the response
         return json.dumps(result)
-    else:
-        # No records are found
-        return "", 404
 
  # finally:
    # print('Process completed')
