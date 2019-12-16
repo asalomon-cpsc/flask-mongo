@@ -19,9 +19,9 @@ def index():
     # try:
     # write to DB
     # get db
-    db = mClient.neiss_test
+
     result = []
-    for report in db.report.find():
+    for report in mongo.db.report.find():
         print(report)
         result.append(report)
  # except Exception:
