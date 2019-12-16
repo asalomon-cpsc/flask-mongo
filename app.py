@@ -1,6 +1,6 @@
 from os import environ
 from datetime import datetime
-from pymongo import MongoClient
+from flask_pymongo import PyMongo
 from flask import Flask, jsonify, render_template
 from flask_cors import CORS
 import os
@@ -10,18 +10,19 @@ import json
 
 app = Flask(__name__)
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
-mongo_conn_str = os.getenv('PROD_MONGODB')
+app.config['MONGO_URI'] = os.getenv('PROD_MONGODB')
+mongo = PyMongo(app)
 
 
 @app.route("/")
 def index():
     # try:
     # write to DB
-    mClient = MongoClient(mongo_conn_str)
     # get db
     db = mClient.neiss_test
     result = []
     for report in db.report.find():
+        print(report)
         result.append(report)
  # except Exception:
         # call this method if any of the database operation above fail
