@@ -28,7 +28,7 @@ def index():
         # call this method if any of the database operation above fail
 
         # Prepare the response
-        return json.dumps(result)
+        return jsonify({'first_name': result['FirstName']})
 
  # finally:
    # print('Process completed')
