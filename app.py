@@ -33,7 +33,7 @@ def index():
         # call this method if any of the database operation above fail
 
         # Prepare the response
-        return jsonify(result)
+    return jsonify(result)
 
  # finally:
    # print('Process completed')
