@@ -23,12 +23,17 @@ def index():
     result = []
     for report in mongo.db.report.find():
         print(report)
-        result.append(report)
+
+        result.append({'first_name': report['FirstName'],
+                       'last_name': report['LastName'],
+                       'email': report['Email'],
+                       'state': report['State'],
+                       'injury': report['Injury']})
  # except Exception:
         # call this method if any of the database operation above fail
 
         # Prepare the response
-        return jsonify({'first_name': result['FirstName']})
+        return jsonify(result)
 
  # finally:
    # print('Process completed')
